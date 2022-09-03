@@ -10,3 +10,6 @@ person2.firstName = 'Simon';
 
 console.log(person1);
 console.log(person2);
+
+// Cambiando person2 varierà anche person1 perchè
+ // facciamo riferimento alle variabili che si trovano nella stessa memoria allocata

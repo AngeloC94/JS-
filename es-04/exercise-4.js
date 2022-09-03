@@ -5,7 +5,6 @@
 // default => 1000
 function calculateSalary(role) {
   if (role == 'ceo') { return ('2200'); }
-
   if (role == 'manager') { return ('1800'); }
   if (role == 'cto') { return ('1800'); }
   if (role == 'developer') { return ('1500'); }
