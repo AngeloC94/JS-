@@ -1,0 +1,45 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's List</h2>
+    <table id="person-table">
+      <tbody></tbody>
+    </table>
+    <button id="add-row">Add row</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let tBody = document.querySelector("tbody");
+  let addBtn = document.getElementById("add-row");
+
+  function addRow() {
+    let trElement = document.createElement("tr");
+
+    let inputFirstName = document.createElement("input");
+    inputFirstName.setAttribute("placeholder", "firstName");
+    inputFirstName.setAttribute("type", "text");
+
+    let inputLastName = document.createElement("input");
+    inputLastName.setAttribute("placeholder", "lastName");
+    inputLastName.setAttribute("type", "text");
+
+    let inputAge = document.createElement("input");
+    inputAge.setAttribute("placeholder", "age");
+    inputAge.setAttribute("type", "number")
+
+    const inputElement = [inputFirstName, inputLastName, inputAge];
+    for (let i = 0; i < inputElement.length; i++) {
+      trElement.append(inputElement[i]);
+    }
+    tBody.append(trElement);
+    // console.log(inputLastName);
+    // console.log(inputFirstName);
+    // console.log(inputAge);
+    // console.log(tBody);
+  }
+  addBtn.addEventListener("click", addRow);
+</script>

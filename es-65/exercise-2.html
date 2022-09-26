@@ -13,26 +13,21 @@
 </html>
 
 <script>
-   const fetchButton = document.getElementById("fetch-post");
-   const postTitle = document.getElementById("post-title");
-   
+ const fetchButton = document.getElementById("fetch-post");
+  const goScreen = document.getElementById("post-title");
 
-   fetchButton.addEventListener('click', fetchPost);
+  async function fetchPost() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let result = await response.json();
 
+    let storage = localStorage.getItem("savedPost");
+    let post = JSON.stringify(result);
 
-   async function fetchPost() {
-     const post = await fetch("https:jsonplaceholder.typicode.com/posts/1");
-     const result = await post.json();
-     localStorage.setItem("savedPost", result);
-     postTitle.innerHTML = result.title;
-   };
-  
-  
-  
-  
+    localStorage.setItem("savedPost", post);
 
-</script>
+    const postTitle = JSON.parse(storage);
+    goScreen.innerHTML = postTitle.title;
+  }
 
-<script>
-
+  buttonFetch.addEventListener("click", fetchPost);
 </script>
